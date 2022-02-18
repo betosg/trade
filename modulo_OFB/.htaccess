@@ -1,0 +1,13 @@
+#
+# Apache/PHP/Online File Browser settings:
+#
+
+# Protect files and directories.
+<FilesMatch "(\.(properties|sample|tpl))$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>
+
+# Set some options.
+Options -Indexes
+Options +FollowSymLinks

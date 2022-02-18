@@ -1,0 +1,8 @@
+>filestring1   'this is string with index \'filestring1\''
+>filestring2   'this is string
+                 with index \'filestring2\''
+>filestring3   'this is string with index
+                 <b>\'filestring3\'</b>
+                 '
+>filestring4   'this is string with index \'filestring4\''
+>docs 'Read documentation'

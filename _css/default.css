@@ -1,0 +1,564 @@
+/************************ CSS KernelPS v1.0.0 - CSS para DOCTYPE **************************\
+	_____________________________________IMPORTANTE_______________________________________											
+	 Esse arquivo contem os estilos CSS padrao do kernel seguindo a construcão do
+	 mesmo. Mudancas aqui feitas redundarão na atualizacão do kernel. 
+	 
+	 *** Para customização dos estilos para um novo sistema, deve-se sobrepor as classes aqui
+	 declaradas no arquivo {nome_sistema}.css (Ex: proeventolite.css, datawide.css...)
+	 Este arquivo (default.css) não deve ser alterado afim de customizar um sistema.
+/******************************************************************************************/
+
+/***** Sobrescrição de tags [Início] *****/
+body       { font-family:Tahoma; font-size:10px; color:#111111; background-repeat:repeat-x; background-attachment:fixed; height:100%; }
+form       { margin:0px; padding:0px; }
+select     { font-family:Tahoma; margin:1px; font-size:10px; border:1px #999999 solid; height:17px; background-image:url(../img/input_bg.gif); color:#333333; width:180px; }
+/* input      { font-family:Tahoma; margin:1px; font-size:10px; color:#111111; border:1px #999999 solid; padding-left:4px; background-image:url(../img/input_bg.gif); height:13px; } */
+input      { font-family:Tahoma; margin:1px; font-size:10px; color:#111111; border:1px #999999 solid; padding-left:4px; height:16px; } 
+textarea   { font-family:Tahoma; margin:1px 1px 3px 1px; font-size:10px; color:#111111; border:1px #999999 solid; padding-left:4px; }
+button     { font-family:Arial; font-size:11px; color:#000000; background-image:url(../img/But_XPSilver_square.gif); background-color:transparent; width:86px; height:24px; border:0px; margin:0px 6px 0px 6px; }
+div	       { font-family:Tahoma; font-size:10px; color:#111111; }
+td	       { font-family:Tahoma; font-size:10px; color:#111111; }
+td a	   { text-decoration:none; color:#111111; }
+td a:hover { text-decoration:none; color:#999999; }
+/***** Sobrescrição de tags [Fim]   *****/
+
+
+/***** Propriedades da dialog_glass *****/
+	
+	/***** Propriedades da dialog_glass - main *****/
+	div.dialog_glass { background:transparent; filter:alpha(opacity=20); }
+	div.dialog_glass .b1, div.dialog_glass .b2, div.dialog_glass .b3, div.dialog_glass .b4 { display:block; overflow:hidden; font-size:1px; }
+	div.dialog_glass .b1, div.dialog_glass .b2, div.dialog_glass .b3 { height:1px; }
+	div.dialog_glass .b2, div.dialog_glass .b3, div.dialog_glass .b4 { background:#FFFFFF; border-left:1px solid #000; border-right:1px solid #000; }
+	div.dialog_glass .b1 { margin:0px 5px; background:#000; }
+	div.dialog_glass .b2 { margin:0px 3px; border-width:0px 2px; }
+	div.dialog_glass .b3 { margin:0px 2px; }
+	div.dialog_glass .b4 { height:2px; margin:0px 1px; }
+	div.dialog_glass .center { padding:4px 8px; background-color:#FFFFFF; border-left:1px solid #000; border-right:1px solid #000; }
+	div.dialog_glass .center .conteudo { position:relative; color:#111111; }
+	div.dialog_glass .center .conteudo .header { padding:4px 0px; font-size:11px; margin-bottom:8px; text-align:left; }
+	/***************************************/
+
+	/***** Propriedades da dialog_glass - form *****/
+	div.dialog_glass .center .conteudo .kernel_dialog { background-color:#FFFFFF; border:1px solid #A6A6A6 !important; margin:0px; } 
+	div.dialog_glass .center .conteudo .kernel_dialog table { padding:0px; } 
+	div.dialog_glass .center .conteudo .kernel_dialog .coluna_label { padding:2px 5px !important; text-align:right; vertical-align:top; white-space:nowrap; height:22px; width:1%;  } 
+	div.dialog_glass .center .conteudo .kernel_dialog .coluna_label label { font-weight:bold; } 
+	div.dialog_glass .center .conteudo .kernel_dialog .coluna_valor { padding:2px 5px !important; text-align:left; vertical-align:top; white-space:normal; height:22px; } 
+	div.dialog_glass .center .conteudo .kernel_dialog .group_divisor { background-image:url(../img/line_dialog.jpg); background-repeat:no-repeat; height:2px; padding:0px; } 
+	/***********************************************/
+
+	/***** Propriedades da dialog_glass - [filtro] *****/
+	div.dialog_glass .center .conteudo .kernel_filtro {  } 
+	div.dialog_glass .center .conteudo .kernel_filtro .group_fields { text-align:left; background-color:#BFBFBF; height:18px; } 
+	div.dialog_glass .center .conteudo .kernel_filtro .group_fields .label { width:99%; padding-left:5px; font-weight:bold; } 
+	div.dialog_glass .center .conteudo .kernel_filtro .group_fields .button { width:1%; padding-left:5px; } 
+	/***********************************************/
+	
+	/***** Propriedades da dialog_glass - [nome_objeto] *****/
+	/***********************************************/
+	
+/***************************************/
+
+/***** Propriedades da dialog_shape *****/
+	
+	/***** Propriedades da dialog_shape - main *****/
+	div.dialog_shape { background:transparent; }
+	div.dialog_shape .b1, div.dialog_shape .b2, div.dialog_shape .b3, div.dialog_shape .b4 { display:block; overflow:hidden; font-size:1px; }
+	div.dialog_shape .b1, div.dialog_shape .b2, div.dialog_shape .b3 { height:1px; }
+	div.dialog_shape .b2, div.dialog_shape .b3, div.dialog_shape .b4 { background:#F0F0F0; border-left:1px solid #F0F0F0; border-right:1px solid #F0F0F0; }
+	div.dialog_shape .b1 { margin:0px 5px; background:#F0F0F0; }
+	div.dialog_shape .b2 { margin:0px 3px; border-width:0px 2px; }
+	div.dialog_shape .b3 { margin:0px 2px; }
+	div.dialog_shape .b4 { height:2px; margin:0px 1px; }
+	div.dialog_shape .center { padding:4px 8px; background-color:#F0F0F0; border-left:1px solid #F0F0F0; border-right:1px solid #F0F0F0; }
+	div.dialog_shape .center .conteudo { position:static; color:#111111; width:100% !important; }
+	div.dialog_shape .center .conteudo .header { padding:4px 0px; font-size:11px; margin-bottom:8px; text-align:left; }
+	/***************************************/
+	
+	/***** Propriedades da dialog_shape - bookmark *****/
+	div.dialog_shape .center .conteudo .kernel_bookmark {  } 
+	div.dialog_shape .center .conteudo .kernel_bookmark .bookmark_group    { background-color:#E0E0E0; cursor:pointer; } 
+	div.dialog_shape .center .conteudo .kernel_bookmark .bookmark_group td { padding:3px; font-weight:bold; background-color:transparent; border-bottom:1px solid #999999;} 
+	div.dialog_shape .center .conteudo .kernel_bookmark .bookmark_item        { padding-left:10px; } 
+	div.dialog_shape .center .conteudo .kernel_bookmark .bookmark_item:before { content:"-"; } 
+	/***************************************************/
+
+	/***** Propriedades da dialog_shape - [nome_objeto] *****/
+	/***********************************************/
+	
+/***************************************/
+
+/***** Propriedades da dialog_white *****/
+	/***** Propriedades da dialog_white - main *****/
+	div.dialog_white { background:transparent; }
+	div.dialog_white .b1, div.dialog_white .b2, div.dialog_white .b3, div.dialog_white .b4 { display:block; overflow:hidden; font-size:1px; }
+	div.dialog_white .b1, div.dialog_white .b2, div.dialog_white .b3 { height:1px; }
+	div.dialog_white .b2, div.dialog_white .b3, div.dialog_white .b4 { background:#FFFFFF; border-left:1px solid #C9C9C9; border-right:1px solid #C9C9C9; }
+	div.dialog_white .b1 { margin:0px 5px; background:#C9C9C9; }
+	div.dialog_white .b2 { margin:0px 3px; border-width:0px 2px; }
+	div.dialog_white .b3 { margin:0px 2px; }
+	div.dialog_white .b4 { height:2px; margin:0px 1px; }
+	div.dialog_white .center { padding:4px 8px !important; background-color:#FFFFFF; border-left:1px solid #C9C9C9; border-right:1px solid #C9C9C9; }
+	div.dialog_white .center .conteudo { position:static; color:#111111; width:100% !important; }
+	div.dialog_white .center .conteudo .header { padding:4px; font-size:11px; margin-bottom:10px; text-align:left; }
+	/***************************************/
+
+	/***** Propriedades da dialog_white - grid *****/
+	div.dialog_white .center .conteudo .kernel_grid  { width:100%; } 
+	div.dialog_white .center .conteudo .kernel_grid .name { font-family:Tahoma; font-weight:bold; text-align:left; font-size:11px; color:#333333; padding-left:5px; } 
+	div.dialog_white .center .conteudo .kernel_grid .line_divisor_thin { background-color:#BFBFBF; height:3px; }
+	div.dialog_white .center .conteudo .kernel_grid .grid_box { background-color:#F7F7F7; border:1px #EEEEEE solid; }
+	div.dialog_white .center .conteudo .kernel_grid .grid_box .header { background-image:url(../img/grid_backheader.gif); background-repeat:repeat-x; }
+	div.dialog_white .center .conteudo .kernel_grid .grid_box .header .title { font-family:Tahoma; font-size:11px; text-align:left; padding:0px 10px; color:#767676; }
+	div.dialog_white .center .conteudo .kernel_grid .grid_box .value {  }
+	div.dialog_white .center .conteudo .kernel_grid .grid_box .line_divisor { background-color:#BFBFBF; height:5px; }
+	div.dialog_white .center .conteudo .kernel_grid .grid_paging {  }
+	div.dialog_white .center .conteudo .kernel_grid .grid_paging .left_arrow { background-image:url(../img/grid_arrow_left.gif); width:17px; height:17px; }
+	div.dialog_white .center .conteudo .kernel_grid .grid_paging .right_arrow { background-image:url(../img/grid_arrow_right.gif); width:17px; height:17px; }
+	/***************************************************/
+	
+	/***** Propriedades da dialog_white - [nome_objeto] *****/
+	/***********************************************/
+	
+/***********************************************/
+
+
+
+
+/*----- Classes Texto  [Início] */
+
+	/* text classes - início */
+	.padrao_peq { font-family:Tahoma; font-size:9px; color:#333333; }
+	a.padrao_peq:hover { font-family:Tahoma; font-size:9px; color:#999999; }
+	.padrao_med { font-family:Tahoma; font-size:10px; color:#333333; }
+	a.padrao_med:hover { font-family:Tahoma; font-size:10px; color:#999999; }
+	.padrao_gde { font-family:Tahoma; font-size:11px; color:#333333; }
+	a.padrao_gde:hover { font-family:Tahoma; font-size:11px; color:#999999; }
+
+	.destaque_peq { font-family:Tahoma; font-size:9px; color:#CF9335; }
+	a.destaque_peq:hover { font-family:Tahoma; font-size:9px; color:#F4E9D8; }
+	.destaque_med { font-family:Tahoma; font-size:10px; color:#CF9335; }
+	a.destaque_med:hover { font-family:Tahoma; font-size:10px; color:#F4E9D8; }
+	.destaque_med_red { font-family:Tahoma; font-size:10px; color:#CC3300; }
+	a.destaque_med_red:hover { font-family:Tahoma; font-size:10px; color:#990000; }
+	.destaque_gde { font-family:Tahoma; font-size:11px; color:#476571; }
+	a.destaque_gde:hover { font-family:Tahoma; font-size:11px; color:#476571; }
+	
+	.contraste_peq { font-family:Tahoma; font-size:9px; color:#FFFFFF; }
+	a.contraste_peq:hover { font-family:Tahoma; font-size:9px; color:#F0F0F0; }
+	.contraste_med { font-family:Tahoma; font-size:10px; color:#FFFFFF; }
+	a.contraste_med:hover { font-family:Tahoma; font-size:10px; color:#F0F0F0; }
+	.contraste_gde { font-family:Tahoma; font-size:12px; color:#FFFFFF; }
+	a.contraste_gde:hover { font-family:Tahoma; font-size:12px; color:#F0F0F0; }
+	
+	.comment_peq { font-family:Tahoma; font-size:9px; color:#663300; }
+	a.comment_peq:hover { font-family:Tahoma; font-size:9px; color:#663300; }
+	.comment_med { font-family:Tahoma; font-size:10px; color:#663300; }
+	a.comment_med:hover { font-family:Tahoma; font-size:10px; color:#663300; }
+	.comment_gde { font-family:Tahoma; font-size:12px; color:#663300; }
+	a.comment_gde:hover { font-family:Tahoma; font-size:12px; color:#663300; }
+	
+	.copyright { font-family:Tahoma; font-size:9px; color:#AAAAAA; }
+	a.copyright:hover { font-family:Tahoma; font-size:9px; color:#999999; }
+	
+	.titulo_grade { font-family:Tahoma; font-size:11px; padding-left:10px; padding-right:10px; color:#767676; }
+/*----- Classes Texto [Fim]  */
+
+/*----- Input classes - início */
+	.inputclean { border:0px transparent solid; background-image:url(); } /* Para inputs que não tenham borda "image, radio, check..." */
+	.inputcleanActionOk { border:0px transparent solid; background-color:#4490DF; color: white;background-image:url(); } /* Para inputs que não tenham borda "image, radio, check..." */
+	.inputcleanActionCancelar { border:0px transparent solid; background-color:#d3d3d3; color: #4490DF;background-image:url(); } /* Para inputs que não tenham borda "image, radio, check..." */
+	.input { font-family:tahoma; font-size:10px; color:#111111; border:1px #999999 solid; padding-left:4px; background-image:url(../img/input_bg.gif); margin:1px; height:16px; }
+	
+	/*----- Auto Redimensionamento do ComboBox - início */
+	.ctrDropDown      { width:180px; font-size:11px; z-index:50; }
+	.ctrDropDownClick { font-size:11px; width:auto; z-index:50; position:absolute; }
+	.plainDropDown    { width:180px; font-size:11px; z-index:50; }
+	/*----- Auto Redimensionamento do ComboBox - início */
+
+/*----- Input classes- fim   */
+	
+/* line classes - inicio */
+	.linedialog { padding:0px; height:1px; background-color:#BFBFBF; }
+/* line classes - fim */
+
+
+.titulo_menu_grid{
+	float:left;
+	clear:left;
+	background: url('../img/bg_panel_top_grade.gif');
+	background-repeat:no-repeat;
+	width:182px;
+	height:23px;
+	cursor:pointer;
+}
+
+.titulo_menu_grid img{
+	float:right;
+	margin-right:6px;
+}
+.titulo_menu_grid span{
+	float:left;
+	vertical-align:middle;
+	font-family:arial;
+	font-size:1.2em; /* font-size:0.7em; */
+	color:#4482AD;   /* color:#215DC6;  */
+	font-weight:bold;
+	float:left;
+	padding-left:8px;
+	letter-spacing:0.1;
+	margin-top:3px;
+}
+
+.conteudo_menu_grid{
+	float:left;
+	clear:left;
+	background-color: #FFFFFF;
+	padding:0;
+	margin:0 0 0 0;
+	width:179px;
+	//width:181px;
+	border-left:1px solid #CFCFCF;
+	border-bottom:1px solid #CFCFCF;
+	border-right:1px solid #CFCFCF;
+
+}
+
+.conteudo_menu_grid li{
+	font-size:0.7em;
+	background-image:url('../img/bg_pane_right.gif');
+	background-position:top right;
+	background-repeat:repeat-y;
+	border-left:1px solid #FFF;
+	border-bottom:1px solid #FFF;	
+	padding-left:2px;
+	padding-right:2px;	
+	overflow:hidden;
+	position:relative;
+	clear:both;
+	padding:0;
+	margin:0;
+	float:left;
+	width:178px;
+	//width:180px;
+}
+
+/*---------------------------*/
+.titulo_menu_acord{
+	float:left;
+	clear:left;
+	background: url('../img/bg_panel_top.gif');
+	background-repeat:no-repeat;
+	width:182px;
+	height:32px;
+	cursor:pointer;
+}
+
+.titulo_menu_acord img{
+	float:right;
+	margin-right:9px;
+}
+
+.titulo_menu_acord span{
+	float:left;
+	line-height:32px;
+	vertical-align:middle;
+	font-family:arial;
+	font-size:1.2em; /* font-size:0.7em; */
+	color:#4482AD;   /* color:#215DC6;  */
+	font-weight:bold;
+	float:left;
+	padding-left:8px;
+	letter-spacing:0.1;
+}
+.conteudo_menu_acord{
+	float:left;
+	clear:left;
+	background-color: #FFFFFF;
+	padding:0;
+	margin:0 0 0 0;
+	width:179px;
+	//width:181px;
+	border-left:1px solid #CFCFCF;
+	border-bottom:1px solid #CFCFCF;
+	border-right:1px solid #CFCFCF;
+}
+
+.conteudo_menu_acord li{
+	font-size:0.7em;
+	background-image:url('../img/bg_pane_right.gif');
+	background-position:top right;
+	background-repeat:repeat-y;
+	border-left:1px solid #FFF;
+	border-bottom:1px solid #FFF;	
+	padding-left:2px;
+	padding-right:2px;	
+	overflow:hidden;
+	position:relative;
+	clear:both;
+	padding:0;
+	margin:0;
+	float:left;
+	width:178px;
+	//width:180px;
+}
+.painel_menu_acord{
+	float:left;
+	margin-left:7px;
+}
+
+.conteudo_menu_acord li a	   { text-decoration:none;  color:#111111; }
+.conteudo_menu_acord li a:hover { text-decoration:none;  color:#999999; }
+
+#menu_combo_tab {
+	float:right;
+	width:100%;
+	background: #FFFFFF; /* #efefef; */
+	font-size:93%;
+	line-height:normal;
+	border-bottom:1px solid #666;
+	}
+#menu_combo_tab ul {
+	margin:0;
+	padding:0px 5px 0 5px;
+	list-style:none;
+	}
+#menu_combo_tab li {
+	display:inline;
+	margin:0;
+	padding:0;
+	}
+#menu_combo_tab a {
+	float:right;
+	background:url("../img/tableftF.gif") no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+	}
+#menu_combo_tab a span {
+	float:right;
+	display:block;
+	background:url("../img/tabrightF.gif") no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:#666;
+	}
+	
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menu_combo_tab a span {float:none;}
+/* End IE5-Mac hack */
+#menu_combo_tab a:hover span {color:#FFFFFF;}
+#menu_combo_tab a:hover {background-position:0% -42px;}
+#menu_combo_tab a:hover span {background-position:100% -42px;}
+
+
+#menu_img{
+	float:left;
+	padding-left:0px;
+	margin-top:0px;
+}
+#menu_img .menuRotulo{
+	float:rigth;
+	position:relative;
+	list-style:none;
+	background-repeat:no-repeat;
+	background: url('../img/bg_panel_top_grade_down.gif');
+	width:170px;
+	height:19px;
+	//width:182px;
+	//height:22px;
+	cursor:pointer;
+	font-family:arial;
+	font-size:1.2em;
+	color:#4482AD;
+	font-weight:bold;
+	padding-left:12px;
+	padding-top:4px;
+}
+
+.submenu_img{
+	position:absolute;
+	left:-5000px;
+}
+
+
+#menu_img li:hover .submenu_img{
+	top:9px;
+	left:0px;
+	padding-left:0px;
+	padding-top:13px;
+	
+}
+
+#menu_img .submenu_img li{
+	background-url:auto;
+	background-color:#FFFFFF;
+	border:0px;
+	list-style:none;
+	width:174px;
+	//width:181px;
+	font-weight:normal;
+	font-size:0.85em;
+	padding-top:3px;
+	padding-bottom:3px;
+	border-right:1px solid #D3D3D3;
+	border-left:1px solid #D3D3D3;
+	border-bottom:1px solid #D3D3D3;
+	margin-top:-1;
+	padding-left: 5px;
+	float:left;
+	text-align:left;
+}
+#menu_img .submenu_img li img{
+	margin-top:0px;
+}
+#menu_img .submenu_img li a{
+	margin-left: 3px;
+}
+
+#menu_img li.over .submenu_img  {
+	top:9px;
+	left:-40px; /* deve ser feito porque o IE6 calcula errado a largura */
+	cursor:pointer;
+	padding-top:14px;
+	text-decoration:none;
+}
+
+/* inicio CSS MENU */
+div.cssMenuDiv {
+	width:100%;
+	height:28px;
+	/* padding:2px 2px; */
+	border-color:#DDDDDD;
+	border-width:0px;
+	border-style:solid;
+}
+
+.cssMenuDiv ul.cssMenu ul { display:none}
+.cssMenuDiv ul.cssMenu li:hover>ul { display:block}
+.cssMenuDiv ul.cssMenu ul { position: absolute;left:-1px;top:98%;}
+.cssMenuDiv ul.cssMenu ul ul { position: absolute;left:98%;top:-2px;}
+.cssMenuDiv ul.cssMenu, .cssMenuDiv ul.cssMenu ul {
+	margin:0px;
+	list-style:none;
+	padding:0px 2px 2px 0px;
+	background-color:#ffffff;
+	background-repeat:repeat;
+}
+
+.cssMenuDiv ul.cssMenu, .cssMenuDiv ul.cssMenu ul {
+	margin:0px;
+	list-style:none;
+	padding:0px 2px 2px 0px;
+	background-color:#ffffff;
+	background-repeat:repeat;
+	border-color:#DDDDDD;
+	border-width:1px;
+	border-style:solid;
+}
+
+.cssMenuDiv ul.cssMenu table { border-collapse:collapse}
+.cssMenuDiv ul.cssMenu { display:block; zoom:1; float: left; }
+.cssMenuDiv ul.cssMenu ul { width:160.65px;	}
+.cssMenuDiv ul.cssMenu li { display:block; margin:2px 0px 0px 2px; font-size:0px; }
+.cssMenuDiv ul.cssMenu a:active, .cssMenuDiv ul.cssMenu a:focus { outline-style:none; }
+.cssMenuDiv ul.cssMenu a
+ ,.cssMenuDiv ul.cssMenu li.dis a:hover
+ ,.cssMenuDiv ul.cssMenu li.sep a:hover {
+	display:block;
+	vertical-align:middle;
+	background-color:#ffffff;
+	border-width:0px;
+	border-color:#6655ff;
+	border-style:solid;
+	text-align:left;
+	text-decoration:none;
+	padding:4px;
+	_padding-left:0;
+	font:normal 11px Verdana;
+	color: #444444;
+	text-decoration:none;
+	cursor:default;
+}
+.cssMenuDiv ul.cssMenu span { overflow:hidden; }
+.cssMenuDiv ul.cssMenu li { float:left; }
+.cssMenuDiv ul.cssMenu ul li { float:none; }
+.cssMenuDiv ul.cssMenu ul a { text-align:left; white-space:nowrap; }
+.cssMenuDiv ul.cssMenu li.sep{
+	text-align:center;
+	padding:0px;
+	line-height:0;
+	height:100%;
+}
+.cssMenuDiv ul.cssMenu li.sep span{
+	float:none;	padding-right:0;
+	width:5;
+	height:16;
+	display:inline-block;
+	background-color:#DDDDDD;
+	background-image:none;
+}
+.cssMenuDiv ul.cssMenu ul li.sep span{ width:80%; height:3;	}
+.cssMenuDiv ul.cssMenu li:hover{ position:relative;	}
+.cssMenuDiv ul.cssMenu li:hover>a{
+	background-color:#4792E6;
+	border-color:#665500;
+	border-style:solid;
+	font:normal 11px Verdana;
+	color: #ffffff;
+	text-decoration:none;
+}
+.cssMenuDiv ul.cssMenu li a:hover{
+	position:relative;
+	background-color:#4792E6;
+	border-color:#665500;
+	border-style:solid;
+	font:normal 11px Verdana;
+	color: #ffffff;
+	text-decoration:none;
+}
+.cssMenuDiv ul.cssMenu li.dis a { color: #AAAAAA !important; }
+.cssMenuDiv ul.cssMenu img { border: none; float:left; _float:none; margin-right:4px; width:16px; height:16px; }
+.cssMenuDiv ul.cssMenu ul img { width:16px; height:16px; }
+.cssMenuDiv ul.cssMenu img.over { display:none }
+.cssMenuDiv ul.cssMenu li.dis a:hover img.over { display:none !important }
+.cssMenuDiv ul.cssMenu li.dis a:hover img.def  { display:inline !important }
+.cssMenuDiv ul.cssMenu li:hover > a img.def  { display:none }
+.cssMenuDiv ul.cssMenu li:hover > a img.over { display:inline }
+.cssMenuDiv ul.cssMenu a:hover img.over
+ ,.cssMenuDiv ul.cssMenu a:hover ul img.def
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover ul img.def
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover ul img.def
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover img.over
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover img.over
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover a:hover img.over { display:inline }
+.cssMenuDiv ul.cssMenu a:hover img.def
+ ,.cssMenuDiv ul.cssMenu a:hover ul img.over
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover ul img.over
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover ul img.over
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover img.def
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover img.def
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover a:hover img.def { display:none }
+.cssMenuDiv ul.cssMenu a:hover ul
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover ul
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover a:hover ul { display:block }
+.cssMenuDiv ul.cssMenu a:hover ul ul
+ ,.cssMenuDiv ul.cssMenu a:hover a:hover ul ul { display:none }
+.cssMenuDiv ul.cssMenu span{
+	display:block;
+	background-image:url(../img/menu_css_arrv_anim_1.gif);
+	background-position:right center;
+	background-repeat: no-repeat;
+	padding-right:11px;
+}
+.cssMenuDiv ul.cssMenu li:hover>a>span{	background-image:url(../img/menu_css_arrv_anim_1o.gif); }
+.cssMenuDiv ul.cssMenu a:hover span { _background-image:url(../img/menu_css_arrv_anim_1o.gif)}
+.cssMenuDiv ul.cssMenu ul span
+ ,.cssMenuDiv ul.cssMenu a:hover table span { background-image:url(../img/menu_css_arr_double_1.gif) }
+.cssMenuDiv ul.cssMenu ul li:hover > a span { background-image:url(../img/menu_css_arr_double_1o.gif);}
+.cssMenuDiv ul.cssMenu table a:hover span
+ ,.cssMenuDiv ul.cssMenu table a:hover a:hover span
+ ,.cssMenuDiv ul.cssMenu table a:hover a:hover a:hover span { background-image:url(../img/menu_css_arr_double_1o.gif) }
+.cssMenuDiv ul.cssMenu table a:hover table span
+ ,.cssMenuDiv ul.cssMenu table a:hover a:hover table span { background-image:url(../img/menu_css_arr_double_1.gif) }
+/* fim CSS MENU */

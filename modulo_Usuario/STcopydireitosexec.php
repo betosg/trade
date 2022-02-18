@@ -1,0 +1,36 @@
+<?php
+include_once("../_database/athdbconn.php");
+include_once("../_database/athtranslate.php");
+
+$objConn = abreDBConn(CFG_DB);
+
+$strLocation       = request("var_location"); // Página para aonde será redirecionado após a execução das operações
+$intCodUsuarioDe   = request("var_de");       // Código do usuário que servirá como base para a cópia dos direitos
+$intCodUsuarioPara = request("var_para");     // Código do usuário que receberá os direitos
+
+($intCodUsuarioPara == "") ? $strErro = "Não foi selecionado um usuário para receber os direitos" : $strErro = NULL;
+($intCodUsuarioDe   == "") ? $strErro = "Não foi selecionado um usuário para ser base da cópia"   : $strErro = NULL;
+
+if(!is_null($strErro)){
+	mensagem("Aviso:",$strErro,"","javascript:history.back()","erro",1);
+	die();
+}
+
+try{
+	$objConn->beginTransaction();
+	
+	$objStatement = $objConn->prepare("SELECT sp_copia_direitos(:de, :para);");
+	$objStatement->bindParam(":de",$intCodUsuarioDe);
+	$objStatement->bindParam(":para",$intCodUsuarioPara);
+	$objStatement->execute();
+	
+	$objConn->commit();
+}
+catch(PDOException $e){
+	mensagem("err_sql_titulo","err_sql_desc",$e->getMessage(),"","erro",1);
+	$objConn->rollBack();
+	die();
+}
+
+redirect("../modulo_Usuario/");
+?>

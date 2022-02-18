@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Документация phpMultiLang</title>
+</head>
+<style type="text/css">	
+<!--
+	body {
+        border: 5px solid #666699;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		color: Black;
+		font-size: 10pt;
+	}
+    a:link {
+        color: #330099;
+    }
+    a:visited {
+        color: #5e5e5e;
+    }
+    a:hover {
+        color: #cc0000;
+    }
+    a.passive:link {
+        color: #000000;
+    }
+    a.passive:visited {
+        color: #000000;
+    }
+    a.passive:hover {
+        color: #000000;
+    }
+    div {
+        padding-left: 20px;
+		padding-right: 20px;
+    }
+	.div_page_header {
+        height: 40px;
+		background-color: #666699;
+		color: #FFF9E3;
+		font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 0px;
+	}
+    .div_code {
+        padding-left: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+.fc008080 {
+	color: #008080;
+}
+.style2 {color: #008080; font-weight: bold; }
+.style3 {font-weight: bold}
+	-->
+</style>
+<body>
+<div class="div_page_header" align="left">
+phpMultiLang v2.0</font>
+</div><br />
+&nbsp;Version: 2.0<br />
+&nbsp;&nbsp;<i>12.05.2005</i><br /><br />
+<hr /><br />
+&nbsp;&nbsp;See the <a href="../CHANGES.txt" target="_blank">CHANGES.txt</a> for know about what's new in this version. <br />
+<br />
+<hr />
+&nbsp;&nbsp;
+<dt>&nbsp;&nbsp;Table of contents :</dt>
+<br />
+<a name="contents" class="passive">
+<dd><a href="#auth" title="Author Info">Author Info </a> </dd>
+<dd><a href="#lic" title="License">License</a></dd>
+<dd><a href="#package" title="Package contents">Package contents </a></dd>
+<dd><a href="#description" title="Summary">Summary</a></dd>
+<dd><a href="#usage" title="Usage">Usage</a></dd>
+<dd><a href="#synt" title="Language file syntax">Language file syntax </a></dd>
+<dd><a href="#feedback" title="Feedback">Feedback</a></dd>
+
+<hr />
+</div>
+<div class="div_content">
+<a name="auth" title="Author Info" class="passive">
+<h4 class="div_content_header">Author Info </h4>
+Konstantin S. Budylov 2005. <br />
+<a href="mailto:nimous@nightworks.ru">nimous@nightworks.ru</a><br />
+<hr />
+<a name="lic" title="License information" class="passive">
+<h4 class="div_content_header">License information </h4>
+The given product is distributed according to a  General Public License (GPL),<br />
+which you can find in a file GPL.txt in this package. <br /><br /><hr />
+<a name="package" title="Package Contents" class="passive">
+<h4 class="div_content_header">Package Contents </h4>
+<b>documentation&nbsp;&nbsp;<font color="#666699" size=-2>Documentation</font></b><br />
+<font color="white">--------</font>doc_RU.html&nbsp;&nbsp;<font color="#666699" size=-2>russian</font><br />
+<font color="white">--------</font>doc_EN.html&nbsp;&nbsp;<font color="#666699" size=-2>english</font><br />
+<b>languages&nbsp;&nbsp;<font color="#666699" size=-2>Language files examples </font></b><br />
+<font color="white">--------</font>russian.lang&nbsp;&nbsp;<font color="#666699" size=-2>russian</font><br />
+<font color="white">--------</font>english.lang&nbsp;&nbsp;<font color="#666699" size=-2>english</font><br />
+<b>cache&nbsp;&nbsp;<font color="#666699" size=-2>The cache directory (for example script) </font></b><br /><br />
+class.phpMultiLang.php&nbsp;&nbsp;<font color="#666699" size=-2>class phpMultiLang declaration </font><br />
+example.php&nbsp;&nbsp;<font color="#666699" size=-2>example script </font><br />
+GPL.txt&nbsp;&nbsp; <font color="#666699" size=-2>GPL license text </font><br />
+CHANGES.txt&nbsp;&nbsp;<font color="#666699" size=-2>List of changes and new features in this version </font><br /><br />
+<hr />
+<a name="description" title="Summary" class="passive">
+<h4 class="div_content_header">Summary</h4>
+The class is intended for the organization of multilanguage support in web application. <br />
+Provides all basic necessary functionality for reception and a conclusion of the language data, <br />
+and some additional opportunities: <br /><br />
+
+<dd>-As sources of the language data you can use of files and-or arrays.</dd>
+<dd>-In case of use of files - processing of their any amount , and also caching results of processing is supported.</dd>
+<dd>-Correct processing of files with <span class="style2">magic_quotes_runtime</span> == <em><strong>TRUE</strong></em>.</dd>
+<dd>-Probably dynamic (i.e. after data processing) addition of the new language data from arrays.</dd>
+<dd>-Probably dynamic change of already processed data.</dd>
+<dd>-In the language data any HTML-marking is allowable.</dd>
+<dd>&nbsp;</dd>
+<dd>-Probably dynamic formatting of the language data with use <span class="style3"><font color="#008080">sprintf()</font></span> modifiers.</dd>
+<br /><br />
+Plus to all a class possesses the understandable interface, and is simple in use.<br />
+<br /><hr />
+<a name="usage" title="Usage" class="passive">
+<h4 class="div_content_header">Usage</h4>
+Use is very simple:<br /><br />
+ In the first, we include in the script a file of a class:
+ <div class="div_code">
+<font face="Courier New"><font SIZE="2"><B><font color="#000000">require</font></B></font></font><font color="#008080">&nbsp;</font><font color="#800000">&quot;class.phpMultiLang.php&quot;</font><font color="#000000">;</font><BR>
+</div>
+<br />
+ Then, we do the same, that we do with the majority of classes, - create an object.<br />
+      <br />
+    In the constructor we set the general directory for language files (<em class="fc008080"><strong> _LangRoot</strong></em> ), if we want use them - first argument.<br />
+    Second argument is the directory for cache files ( <em class="fc008080"><strong>_LangCachePath</strong></em> ).<br />
+  Path must be absolute, or relative to CWD.<br />
+The specified directories should be existant, and readable, and <em class="fc008080"><strong>_LangCachePath</strong></em> - also should be writeable.<br />
+If any from these conditions it is not executed, there will be generated an error, and value of a directory will be switched to CWD.<br />
+The CWD is also the default value for these parametres. <br />
+<div class="div_code">
+<font face="Courier New"><font SIZE="2"><font color="#000000">$</font></font></font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><B><font color="#000000">new</font></B><font color="#008080">&nbsp;<strong>phpMultiLang</strong></font><font color="#000000">(</font><font color="#800000">'languages'</font>,<font color="#800000">'cache'</font><font color="#000000">);</font><font color="#008080">&nbsp;&nbsp;&nbsp;</font>
+</div>
+<br />
+Then it is necessary to set indexes and parameters of languages:
+<div class="div_code">
+  <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguage</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,</font><font color="#800000">'ru'</font><font color="#000000">);</font><BR>
+  <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguage</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,<b>null</b>,<b>array</b>(<font color="#800000">'LC_ALL'</font>,<font color="#800000">'en'</font>)<font color="#000000">);</font><BR>
+   
+  </div>
+The first argument of <strong><font color="#008080">AssignLanguage</font></strong>()  - is unique language index (<strong>string</strong>), on which further it will be identified.
+    <br />
+  The second (unessential) - path to a directory (relative <span class="fc008080"><strong>_LangRoot</strong></span>), in which there should be files 
+  for registered language.<br />
+    The <span class="style2">_LangRoot</span> will be used by default.<br />
+    The third argument is used if you want to set the locale for the given language configuration.<br />
+    As the third parameter you should transfer the array, which zero element - is the NAME OF THE CONSTANT (<strong>in a string format </strong>) for PHP function <font color="#008080"><b>setlocale()</b></font>, and element with index '1' - is the name of locale for same function (se the manual of <span class="style2">setlocale()</span> on a <a href="http://php.net">php.net</a>). <br /><br />
+If you want to set the locale adjustments, not specifying the language files directory,<br />
+set the second argument to <em><strong>NULL</strong></em>.<br />
+      <br />
+      If at the moment of a call <strong><font color="#008080">AssignLanguage</font></strong>() the directory for language is unknown, it is possible to set it later<br />
+      by calling <strong><font color="#008080">SetLanguageDir</font></strong>(), transferred as parameters an index of language and a name of a directory.<br />
+      For example:
+      </p>
+    </p>
+</p>
+<div class="div_code">
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>SetLanguageDir</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,</font><font color="#800000">'en'</font><font color="#000000">);</font><font color="#008080">&nbsp;</font>
+</div>
+<br />
+After that we specify where to take the necessary data.<br /><br />
+For this purpose the method <font color="#008080"><strong>AssignLanguageSource()</strong></font> is used.
+<br>
+As the first argument the index of language for which the data are added is transferred.<br>
+As the second - the name of a file (relative to directory specified for this language, and readable),<br>
+or an array, directly containing the language data.
+<div class="div_code">
+  <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,</font><font color="#800000">'russian.lang'</font>,<font color="#0000ff">3600</font><font color="#000000">);</font><BR>
+      <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,</font><font color="#800000">'english.lang'</font>,<font color="#0000ff">3600</font><font color="#000000">);</font><BR>
+      <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,</font><B>array</B>(<font color="#800000">&quot;some_index1&quot;</font><font color="#000000">=&gt;</font><font color="#800000">&quot;Some string &quot;</font><font color="#000000">));</font><br>
+ <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,</font><b>array</b>(<font color="#800000">&quot;some_index2&quot;</font><font color="#000000">=&gt;</font><font color="#800000">&quot;Some string with %smodifiers%s&quot;</font><font color="#000000">));</font><BR>
+</div>
+The third parameter - is the cache expire value(in the seconds),<br />
+It is meaningful only at addition of a file and at use for the given language of a caching mode (it will be set in a <span class="style2">SetLanguage</span>() method):<br />
+<br />
+
+
+<br /><br />
+After we shall decide, what language is required to us,<br />
+we should initialize it, having transferred its index(What have set in <strong><font color="#008080"> AssignLanguage</font></strong>),<br /> 
+as the first argument to <strong><font color="#008080">SetLanguage</font></strong>():
+<div class="div_code">
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>SetLanguage</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">, <b>TRUE</b>);</font>
+</div>
+If the second argument is <b>TRUE</b>, that  is caching mode  for the given language will be switched to ON (OFF by default).
+<br /><br />
+At the moment of a call of this method, in case if locale adjustments for language have been set (see <span class="style2">AssignLanguage</span>()), the 
+<font color="#008080"><b>setlocale()</b></font> will be called.<br />
+<br />
+Everything, that now remained to us, to print the processed data.<br />
+<br />
+It is made by a call of a method<strong><font color="#008080">GetString</font></strong>(),<br />
+As parameter for which it is necessary to transfer an index of the string necessary to us:
+<div class="div_code">
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index1&quot;</font><font color="#000000">);</font><BR>
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index2&quot;</font><font color="#000000">);</font><BR>
+<br />
+It will prints :<br /><br />
+<i>Some string </i><br />
+and<br />
+Some string with %smodifiers%s</div><br />
+Also there is an opportunity of additional formatting of a string, <br /> 
+wich contains the
+<font color="#008080"><b>sprintf</b></font>-modifiers(the string with index "some_index2" in this example )<br /> 
+with use of a method <strong><font color="#008080">GetFString</font></strong>():
+<div class="div_code">
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetFString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index2&quot;</font><font color="#000000">,</font><B>array</B>(<font color="#800000">&quot;&lt;font&nbsp;color=#008080&gt;&lt;b&gt;&quot;</font><font color="#000000">,</font><font color="#800000">&quot;<font color="#800000">&lt;/b&gt;</font>&lt;/font&gt;&quot;</font><font color="#000000">));</font><BR>
+<br />
+Prints:<br /><br />
+<i>Some string with&nbsp;<font color="#008080"><b>&nbsp;modifiers&nbsp;</b></font></i>
+</div>
+<br /> 
+The first argument for
+<span class="fc008080"><strong>GetFString()</strong></span> is the string index.<br />
+Second - the array, contains the values for replacing by a <span class="style2">sprintf</span>().<br />
+ Values are processed in that order in which they are set in an array.<br />
+<br />
+If modifiers in string appears less, than values in an array, superfluous values will be ignored.<br />
+If on the contrary, the modifier, corresponding value for which it is not found, comes back without changes.<br /><br /><br />
+One more opportunity which can be useful, dynamic change of a string.<br /><br />
+For this purpose the method <strong><font color="#008080">GetStringReference</font></strong>() serves.
+<div class="div_code">
+If to cause it in a similar way:<br /><br />
+<font color="#000000">$</font><font color="#008080"><strong>d</strong>&nbsp;</font><font color="#000000">=&amp;$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetStringReference</font></strong><font color="#000000">(</font><font color="#800000">'some_index1'</font><font color="#000000">);</font><br />
+<br />
+than $<font color="#008080">d</font> will be the reference to a string with index "some_index1",<br />
+And by means of change $d it will be possible to change directly contents of a string &quot;some_index1&quot;:<br /><br />
+$<strong><font color="#008080">d</font></strong> = <font color="#800000">"Changed string "</font>;<br />
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><span class="style3"><font color="#008080">Lang</font></span><font color="#000000">-&gt;</font><strong><font color="#008080">GetString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index1&quot;</font><font color="#000000">);</font><BR>
+<br />
+Prints: Changed string<br />
+</div><br />
+At last, two more methods which can be useful:<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;- <strong><font color="#008080">GetLanguage</font></strong>() - Returns an index of the current active language.<br />
+ and<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;- <strong><font color="#008080">GetLocale</font></strong>() - Returns current locale name,if it has been established.<br />
+<br /><hr />
+<a name="synt" title="Language file syntax" class="passive">
+<h4>The language file syntax </h4>
+<p>All the strings long in a language file should have the following format: <br />
+    <br />
+    <strong>&gt;Index </strong>(one or more spaces) <em>'String' </em><br />
+    <br />
+    <strong>Index </strong> - sequence of symbols A-Z, 0-9, and _ (case insensitive) <br />
+    <br />
+    <em>String </em> - single-quoted sequence of any symbols. <br />
+    <br />
+  If the string should contains the 'single-quotes', they must be escaped with backslash: \' <br />
+  <br />
+  Lines can contain any html marking. <br />
+  <br />
+  The empty <em>'Strings' </em> are not allowed. <br />
+  In this version empty strings lead to some file processing errors. <br />
+  In the next versions I shall try to correct it. <br />
+  <br />
+  Another one. <br />
+  I precisely did not check, but probably, everything, that does not get under a pattern of a 'string', will not processed in any way. <br />
+  (it to a question on comments in a file). <br />
+  In the next versions support of comments in files will be necessarily added. <br />
+  <br />
+  Here, actually, the end. <br />
+  <br />
+  Enjoy :) </p>
+<p>    <br />
+</p>
+<hr />
+<a name="feedback" title="Feedback" class="passive">
+<h4 class="div_content_header">Feedback</h4>
+<a name="feedback" id="feedback"></a>Please, if you had any questions or wishes, <br />
+and also, if you will notice any discrepancies, or reticences in this documentation,<br />
+please, contact me <a href="mailto:nimous@nightworks.ru">by this eMail </a>. <br />
+<br />
+Constructive criticism also with pleasure is accepted.
+<br /><br />
+<hr /><br /><br />
+<center>
+  <a href="#contents">Table of contents </a>
+</center><br /><br />
+</div>
+<div class="div_page_header" align="center">
+&nbsp;
+</div>
+</body>
+</html>

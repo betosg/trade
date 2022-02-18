@@ -1,0 +1,15 @@
+
+
+ Estes são os arquivos modelos para a criação de um módulo ST (estático) desde o início.
+ 
+ pré-requisitos:
+ - criação do módulo no cadastro de módulos
+ - definição de direitos para o módulo criado
+ - definição de direitos aos usuários que irão acessar o módulo
+ 
+
+
+ Outros arquivos que faltam nessa pasta:
+ - uma estática de InsUpdMasterEditor
+
+

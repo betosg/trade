@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Teste</title>
+    <script type="text/javascript">
+      _editor_url = "./";
+      _editor_lang = "pt_br";
+    </script>
+    <script type="text/javascript" src="htmlarea.js"></script>
+    <script type="text/javascript">
+      HTMLArea.loadPlugin("ContextMenu");
+      HTMLArea.loadPlugin("FullPage");
+      HTMLArea.loadPlugin("TableOperations");
+
+      var editor = null;
+      function initDocument() {
+        editor = new HTMLArea("editor");
+        editor.registerPlugin(ContextMenu);
+        editor.registerPlugin(FullPage);
+        editor.registerPlugin(TableOperations);
+        editor.generate();
+      }
+    </script>
+  </head>
+  <body onload="initDocument()">
+    <h1>Teste</h1>
+    <textarea id=editor style="height:30em;width:100%">Teste</textarea>
+    <hr/>
+    <input type=button value="Ver Código Fonte" onClick="alert(editor.getHTML());">
+  </body>
+</html>

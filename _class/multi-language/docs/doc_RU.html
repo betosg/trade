@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Документация phpMultiLang</title>
+</head>
+<style type="text/css">	
+<!--
+	body {
+        border: 5px solid #666699;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		color: Black;
+		font-size: 10pt;
+	}
+    a:link {
+        color: #330099;
+    }
+    a:visited {
+        color: #5e5e5e;
+    }
+    a:hover {
+        color: #cc0000;
+    }
+    a.passive:link {
+        color: #000000;
+    }
+    a.passive:visited {
+        color: #000000;
+    }
+    a.passive:hover {
+        color: #000000;
+    }
+    div {
+        padding-left: 20px;
+		padding-right: 20px;
+    }
+	.div_page_header {
+        height: 40px;
+		background-color: #666699;
+		color: #FFF9E3;
+		font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 0px;
+	}
+    .div_code {
+        padding-left: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+.fc008080 {
+	color: #008080;
+}
+.style2 {color: #008080; font-weight: bold; }
+.style3 {font-weight: bold}
+	-->
+</style>
+<body>
+<div class="div_page_header" align="left">
+phpMultiLang v2.0</font>
+</div><br />
+&nbsp;&nbsp;Версия: 2.0<br />
+&nbsp;&nbsp;<i>12.05.2005</i><br /><br />
+<hr /><br />
+&nbsp;&nbsp;Чтобы посмотреть, что нового в этой версии, в загляните в файл <a href="../CHANGES.txt" target="_blank">CHANGES.txt</a> в этом архиве
+<br /><br />
+<hr />
+&nbsp;&nbsp;
+<dt>&nbsp;&nbsp;Содержание:</dt><br />
+<a name="contents" class="passive">
+<dd><a href="#auth" title="Кто это сделал">Автор</a></dd>
+<dd><a href="#lic" title="Права и обязанности">Лицензия</a></dd>
+<dd><a href="#package" title="Что внутри">Содержимое архива</a></dd>
+<dd><a href="#description" title="Что это вообще такое">Описание</a></dd>
+<dd><a href="#usage" title="Как это работает">Использование</a></dd>
+<dd><a href="#synt" title="Как писать языковые файлы">Синтаксис языковых файлов</a></dd>
+<dd><a href="#feedback" title="Как связаться">Обратная связь</a></dd>
+
+<hr />
+</div>
+<div class="div_content">
+<a name="auth" title="Автор" class="passive">
+<h4 class="div_content_header">Автор</h4>
+Будылов Константин.<br />
+<a href="mailto:nimous@nightworks.ru">nimous@nightworks.ru</a><br />
+<hr />
+<a name="lic" title="Лицензия" class="passive">
+<h4 class="div_content_header">Лицензионная информация</h4>
+Данный продукт распространяется согласно General Public License (GPL),<br />
+полный текст которой находится в файле GPL.txt<br /><br /><hr />
+<a name="package" title="Содержимое" class="passive">
+<h4 class="div_content_header">Содержимое архива</h4>
+<b>documentation&nbsp;&nbsp;<font color="#666699" size=-2>Документация</font></b><br />
+<font color="white">--------</font>doc_RU.html&nbsp;&nbsp;<font color="#666699" size=-2>Для русских</font><br />
+<font color="white">--------</font>doc_EN.html&nbsp;&nbsp;<font color="#666699" size=-2>Для других</font><br />
+<b>languages&nbsp;&nbsp;<font color="#666699" size=-2>Языковые файлы</font></b><br />
+<font color="white">--------</font>ru.lang&nbsp;&nbsp;<font color="#666699" size=-2>русский</font><br />
+<font color="white">--------</font>en.lang&nbsp;&nbsp;<font color="#666699" size=-2>английский</font><br />
+<b>cache&nbsp;&nbsp;<font color="#666699" size=-2>Каталог для кеша</font></b><br /><br />
+class.phpMultiLang.php&nbsp;&nbsp;<font color="#666699" size=-2>класс phpMultiLang</font><br />
+example.php&nbsp;&nbsp;<font color="#666699" size=-2>пример использования</font><br />
+GPL.txt&nbsp;&nbsp;<font color="#666699" size=-2>Текст лицензии</font><br />
+CHANGES.txt&nbsp;&nbsp;<font color="#666699" size=-2>Список изменений в этой версии</font><br /><br />
+<hr />
+<a name="description" title="Описание" class="passive">
+<h4 class="div_content_header">Описание</h4>
+Класс предназначен для организации мультиязыковой поддержки в web приложении.<br />
+Обеспечивает всю основную необходимую функциональностьдля получения и вывода языковых данных,<br /> 
+плюс некоторые дополнительные возможности, а именно:<br /><br />
+
+<dd>-В качестве источников языковых данных допускается использование файлов и/или массивов.</dd>
+<dd>-В случае использования файлов - возможна обработка любого их количества, а также кеширование результатов обработки.</dd>
+<dd>-Корректная обработка файлов при <span class="style2">magic_quotes_runtime</span> == <em><strong>TRUE</strong></em>.</dd>
+<dd>-Возможно динамическое (т.е. после обработки данных) добавление новых языковых данных из массивов.</dd>
+<dd>-Возможно динамическое изменение уже обработанных данных</dd>
+<dd>-В языковых данных допустима любая HTML-разметка.</dd>
+<dd>&nbsp;</dd>
+<dd>-Возможно динамическое форматирование языковых данных во время вывода с использованием </dd>
+<dd>модификаторов <font color="#008080"><b>sprintf()</b></font></dd>
+<br /><br />
+Плюс ко всему класс обладает понятным интерфейсом, и прост в использовании.<br />
+<br /><hr />
+<a name="usage" title="Использование" class="passive">
+<h4 class="div_content_header">Использование</h4>
+Использование очень просто:<br /><br />
+Во первых, включаем в свой скрипт файл класса:
+<div class="div_code">
+<font face="Courier New"><font SIZE="2"><B><font color="#000000">require</font></B></font></font><font color="#008080">&nbsp;</font><font color="#800000">&quot;class.phpMultiLang.php&quot;</font><font color="#000000">;</font><BR>
+</div>
+<br />
+    Затем, делаем то же, что мы делаем с большинством классов, -создаём объект.
+      <br />
+      <br />
+    В конструкторе задаётся общая директория для языковых файлов  (<em class="fc008080"><strong> _LangRoot</strong></em> ), если таковые будут использованы.<br />
+    Второй параметр - директория для файлов кеша ( <em class="fc008080"><strong>_LangCachePath</strong></em> ).<br />
+  Путь может быть как абсолютным, так и относительным к текущей.<br />
+Указанные директории должны существовать, и быть доступными для чтения, а  <em class="fc008080"><strong>_LangCachePath</strong></em> - также и для записи.<br />
+Если какое-либо из этих условий не выполнено, будет сгенирирована ошибка, и значение директории установится в CWD.<br />
+Текущая рабочая директория также является значением по умолчанию для обоих аргументов. <br />
+<div class="div_code">
+<font face="Courier New"><font SIZE="2"><font color="#000000">$</font></font></font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">=</font><font color="#008080">&nbsp;</font><B><font color="#000000">new</font></B><font color="#008080">&nbsp;<strong>phpMultiLang</strong></font><font color="#000000">(</font><font color="#800000">'languages'</font>,<font color="#800000">'cache'</font><font color="#000000">);</font><font color="#008080">&nbsp;&nbsp;&nbsp;</font>
+</div>
+<br />
+Затем необходимо задать индексы и параметры языков:
+<div class="div_code">
+  <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguage</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,</font><font color="#800000">'en'</font><font color="#000000">);</font><BR>
+  <font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguage</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,<b>null</b>,<b>array</b>(<font color="#800000">'LC_ALL'</font>,<font color="#800000">'ru'</font>)<font color="#000000">);</font><BR>
+  </div>
+Первый аргумент метода <strong><font color="#008080">AssignLanguage</font></strong>()  - уникальный индекс языка (<strong>string</strong>), по которому в дальнейшем он будет идентифицироваться.
+    <br />
+  Второй (необязательный) - путь к директории относительно <span class="fc008080"><strong>_LangRoot</strong></span>, в которой должны находиться файлы
+  <br />
+для регистрируемого языка.<br />
+    По умолчанию будет использован <span class="style2">_LangRoot</span>.<br />
+    Третий аргумент используется если Вы хотите установить значение локали для данной языковой конфигурации.<br />
+    В качестве третьего параметра может быть передан массив, нулевой элемент которого - ИМЯ КОНСТАНТЫ (<strong>в формате строки</strong>) для функции PHP <font color="#008080"><b>setlocale()</b></font>, а 
+  элемент с индексом '1' - имя локали для этой же функции (см. мануал к <span class="style2">setlocale()</span>). <br /><br />
+Если Вы хотите установить настройки локали, не указывая каталог для языковых файлов,<br />
+передайте <em><strong>NULL</strong></em> в качестве второго параметра <br />
+      <br />
+      Если на момент вызова <strong><font color="#008080">AssignLanguage</font></strong>() директория неизвестна,
+              можно задать её и позже<br />
+      с помощью вызова <strong><font color="#008080">SetLanguageDir</font></strong>(), передав в качестве параметров индекс языка и имя директории.<br />
+      Например:
+      </p>
+    </p>
+</p>
+<div class="div_code">
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>SetLanguageDir</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,</font><font color="#800000">'ru'</font><font color="#000000">);</font><font color="#008080">&nbsp;</font>
+</div>
+<br />
+После этого мы указываем, где брать необходимые данные.<br /><br />
+Для этого используется метод <font color="#008080"><strong>AssignLanguageSource()</strong></font>.
+<br>
+В качестве первого аргумента передаётся индекс языка, для которого добавляются данные.<br>
+В качестве второго может быть передано имя файла(относительно директории с файлами,<br>
+определённой для этого языка), доступного для чтения, либо массив, непосредственно содержащий данные.
+<div class="div_code">
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,</font><font color="#800000">'russian.lang'</font>,<font color="#0000ff">3600</font><font color="#000000">);</font><BR>
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'EN'</font><font color="#000000">,</font><font color="#800000">'english.lang'</font>,<font color="#0000ff">3600</font><font color="#000000">);</font><BR>
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,</font><B>array</B>(<font color="#800000">&quot;some_index1&quot;</font><font color="#000000">=&gt;</font><font color="#800000">&quot;Какая-то строка&quot;</font><font color="#000000">));</font><BR>
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>AssignLanguageSource</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">,</font><B>array</B>(<font color="#800000">&quot;some_index2&quot;</font><font color="#000000">=&gt;</font><font color="#800000">&quot;Cтрока с %sмодификаторами%s&quot;</font><font color="#000000">));</font><BR>
+</div>
+Третий параметр - время устаревания кеша данного файла(в секундах),<br />
+имеет смысл только при добавлении файла и при использовании для данного языка режима кеширования:<br />
+<br />
+
+
+<br /><br />
+После того, как мы решим, какой язык нам понадобится,<br />
+мы должны будем инициализировать его, передав его индекс(тот, который задали вызовом<strong><font color="#008080"> AssignLanguage</font></strong>),<br />
+в качестве параметра в метод <strong><font color="#008080">SetLanguage</font></strong>():
+<div class="div_code">
+<font color="#000000">$</font><font color="#008080"><strong>Lang</strong>&nbsp;</font><font color="#000000">-&gt;</font><font color="#008080">&nbsp;<strong>SetLanguage</strong></font><font color="#000000">(</font><font color="#800000">'RU'</font><font color="#000000">, <b>TRUE</b>);</font>
+</div>
+Если второй параметр == <b>TRUE</b>, то для данного языка включается режим кеширования файлов исходных данных.
+<br /><br />
+В момент вызова этого метода, в спучае, если были заданы настройки локали для языка (см. метод <span class="style2">AssignLanguage</span>()),
+произойдёт вызов <font color="#008080"><b>setlocale()</b></font> с переданными ранее параметрами.<br />
+<br />
+Всё, что нам теперь осталось, -вывести обработанные данные.<br />
+<br />
+Это делается путём вызова метода <strong><font color="#008080">GetString</font></strong>(),<br />
+в качестве параметра для которого необходимо передать индекс нужной нам строки:
+<div class="div_code">
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index1&quot;</font><font color="#000000">);</font><BR>
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index2&quot;</font><font color="#000000">);</font><BR>
+<br />Выведет соответственно:<br /><br />
+<i>Какая-то строка</i><br />и<br />
+<i>Строка&nbsp;с&nbsp;%s&nbsp;модификаторами&nbsp;%s</i>
+</div><br />
+Также существует возможность дополнительного форматирования строки,<br />
+содержащей <font color="#008080"><b>sprintf</b></font>-модификаторы(в данном примере - строка под индексом "some_index2")<br /> 
+во время вывода с использованием метода <strong><font color="#008080">GetFString</font></strong>():
+<div class="div_code">
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetFString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index2&quot;</font><font color="#000000">,</font><B>array</B>(<font color="#800000">&quot;&lt;font&nbsp;color=#008080&gt;&lt;b&gt;&quot;</font><font color="#000000">,</font><font color="#800000">&quot;<font color="#800000">&lt;/b&gt;</font>&lt;/font&gt;&quot;</font><font color="#000000">));</font><BR>
+<br />Выведет:<br /><br />
+<i>Строка&nbsp;с&nbsp;<font color="#008080"><b>&nbsp;модификаторами&nbsp;</b></font></i>
+</div>
+<br />
+В качестве первого параметра <span class="fc008080"><strong>GetFString()</strong></span> принимает индекс нужной строки.<br />
+В качестве второго - массив, содержащий данные, подлежащие форматированной вставке в строку.<br />
+Имена ключей значения не имеют. Значения обрабатываются в том порядке, в котором они заданы в массиве.<br />
+<br />
+Если модификаторов в строке окажется меньше, чем значений в массиве, лишние значения игнорируются.<br />
+Если наоборот, -модификатор, соответствующее значение для которого не найдено,
+возвращается без изменений.<br /><br /><br />
+Ещё одна возможность, которая может пригодиться, -динамическое изменение строки.<br /><br />
+Для этого служит метод <strong><font color="#008080">GetStringReference</font></strong>().
+<div class="div_code">
+Если вызвать его подобным образом:<br /><br />
+<font color="#000000">$</font><font color="#008080"><strong>d</strong>&nbsp;</font><font color="#000000">=&amp;$</font><strong><font color="#008080">Lang</font></strong><font color="#000000">-&gt;</font><strong><font color="#008080">GetStringReference</font></strong><font color="#000000">(</font><font color="#800000">'some_index1'</font><font color="#000000">);</font><br />
+<br />то $<font color="#008080">d</font> окажется ссылкой на строку под индексом "some_index1",<br />
+и посредством изменения $<font color="#008080">d</font> будет возможно напрямую изменять содержимое строки "some_index1":<br /><br />
+$<strong><font color="#008080">d</font></strong> = <font color="#800000">"Изменённая строка"</font>;<br />
+<B><font color="#000000">echo</font></B><font color="#008080">&nbsp;</font><font color="#000000">$</font><span class="style3"><font color="#008080">Lang</font></span><font color="#000000">-&gt;</font><strong><font color="#008080">GetString</font></strong><font color="#000000">(</font><font color="#800000">&quot;some_index1&quot;</font><font color="#000000">);</font><BR>
+<br />Выведет:
+<i>Изменённая строка</i><br />
+</div><br />
+Наконец, ещё два метода, которые могут пригодиться:<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;- <strong><font color="#008080">GetLanguage</font></strong>() - возвращает индекс текущего используемого языка.<br />
+ и <br />
+ &nbsp;&nbsp;&nbsp;&nbsp;- <strong><font color="#008080">GetLocale</font></strong>() - возвращает текущую установленную локаль, если она была установлена.<br />
+<br /><hr />
+<a name="synt" title="Синтаксис языкового файла" class="passive">
+<h4 class="div_content_header">Синтаксис языкового файла</h4>
+Все строки в языковом файле должны иметь следующий формат:<br /><br />
+<b>&gt;индекс</b>(один и более пробелов)<i>'Строка'</i><br /><br />
+<b>Индекс</b> - последовательность символов A-Z, 0-9, и _ (нечувствительно к регистру)<br /><br />
+<i>Строка</i> - последовательность любых символов, заключённая в одинарные кавычки.<br /><br />
+В случае, если строка должна содержать одинарные кавычки, они должны быть экранированы обратным слешем: \'<br /><br />
+Строки могут содержать любую html разметку.<br /><br />
+Пустые <i>'Cтроки'</i> запрещены.<br />
+В этой версии пустые строки приводят к ошибкам обработки файла.<br />
+В будущих версиях я постараюсь исправить это.<br /><br />
+И ещё.<br />
+Я точно не проверял, но видимо, всё, что не попадает под паттерн строки, не обрабатывается никак.<br />
+(это к вопросу о комментариях в файле).<br />
+В будущих версиях обязательно будет добавлена поддержка комментариев в файлах.
+<br /><br />
+Вот, собственно, и всё.<br /><br />
+Наслаждайтесь :)<br />
+<br /><hr />
+<a name="feedback" title="Обратная связь" class="passive">
+<h4 class="div_content_header">Обратная связь</h4>
+Пожалуйста, если у Вас возникли какие-либо вопросы или пожелания,<br />
+свяжитесь со мной <a href="mailto:nimous@nightworks.ru">по eMail</a>.<br /><br />
+Конструктивная критика также с удовольствием принимается.
+<br /><br />
+<hr /><br /><br />
+<center><a href="#contents">Содержание</a></center><br /><br />
+</div>
+<div class="div_page_header" align="center">
+&nbsp;
+</div>
+</body>
+</html>

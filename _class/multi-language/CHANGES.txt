@@ -1,0 +1,70 @@
+/***********************************************************************
+************************************************************************/
+
+    This file is a list of changes in class phpMultiLang, version 2.0
+    in comparison with version 1.0
+
+    ----------------------------------------------------------------------
+
+    -At first(and, perhaps, is most important thing)-
+        is the language files caching support was added for more performance.
+
+        Now You can cahce any file (or some files) of any language
+        with its own expire. The caching mechanism will automatically
+        checks the expire of cache and owerwrite it,
+        or use instead of a language file.
+
+        The caching can be enabled/disabled for each language separately,
+        and the expire can be adjusted separately for each language file.
+
+        I think, that is useful option.
+
+    ----------------------------------------------------------------------
+
+    -Next - is the localization support for each language.
+        You can set the locale for any language,
+        simply transfer necessary adjustments in the third argument of
+        AssignLanguage() method;
+
+    ----------------------------------------------------------------------
+
+    -Added method GetLocale(). It returns the current locale string, if it has been defined.
+
+    ----------------------------------------------------------------------
+
+    -Added a correct processing of files with the php.ini directive
+        'magic_quotes_runtime' is turned to TRUE;
+
+        The call of the ini_set("magic_quotes_runtime",0) has been removed from a constructor,
+        because its no good, when the class for multilanguage support changes the ini. configuration.
+        I think...
+
+    ----------------------------------------------------------------------
+
+    -Algorithms, and internal structure of a class are a little altered
+        for more performance, but return compatibility with the previous version
+        is kept almost completely except for this:
+
+        - method SetDynamicIndex() has been renamed to GetStringReference()
+        - method GetCurrentLanguage() has been renamed to GetLanguage().
+        - when the method SetLanguage() has been successfully called,
+          you can assign only (array) language sources.
+          In the previous version the files also could be assigned this way.
+
+    ----------------------------------------------------------------------
+
+    -Documentation and the example has been updated for current version.
+
+    ----------------------------------------------------------------------
+
+    That is all changes, I think.
+    If you'll find anything else, please notify me,
+    and I will include it in this file immediately.
+    :)
+
+    ----------------------------------------------------------------------
+
+    Enjoy.
+
+/***********************************************************************
+************************************************************************/

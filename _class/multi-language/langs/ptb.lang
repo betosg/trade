@@ -1,0 +1,13 @@
+>filestring1   'isto é um conjunto de caracteres com o índice \'filestring1\''
+>filestring2   'isto é um conjunto de caracteres
+                 com o índice \'filestring2\''
+>filestring3   'isto é um conjunto de caracteres com o índice
+                 <b>\'filestring3\'</b>
+                 '
+>isto é um conjunto de caracteres com o índice'   'isto é um conjunto de caracteres com o índice \'filestring4\''
+>docs 'Leia-me (documentação)'
+>bancodedados 'banco de dados'
+>evento 'evento'
+>usuario 'usuário'
+>senha 'senha'
+>Aprimore_suas_habilidades_em_negociacao 'Aprimore suas habilidades em negociação!'

@@ -1,0 +1,268 @@
+/*
+   Add the following to your CSS file should you wish the cursor to
+   "wait" while the script is processing the sort
+
+body.sort-active *
+        {
+        cursor:wait;
+        }
+*/
+/*body  {
+        padding: 5px 5px 5px 5px;
+        border:0;
+        margin:0;
+        text-align:center;
+        font-size:12px;
+        font-family: verdana,arial,sans-serif;
+        color:#545454;
+        min-width: 800px;
+		background-color:#ffffff;
+    }*/
+.tablesort h2 span
+        {
+        font-variant:small-caps;
+        }
+.tablesort p a
+        {
+        font-weight:normal;
+        outline:none;
+        }
+.tablesort p a:link,
+.tablesort p a:visited
+        {
+        color:#333;
+        text-decoration:underline;
+        }
+.tablesort p a:hover
+        {
+        color:#fff;
+        text-decoration:none;
+        background:#000;
+        }
+.tablesort p a:active
+        {
+        color:#000;
+        text-decoration:underline;
+        }
+.tablesort code
+        {
+        font-family:'andale mono','lucida console','courier new',monospace;
+        font-size:1em;
+        }
+.tablesort p
+        {
+        line-height:1.6em;
+        margin:0 0 1em 0;
+        }
+.tablesort h1
+        {
+        font-weight:lighter;
+        font-family:georgia, times new roman, times, georgia, palatino, serif;
+        text-align:center;
+        margin-top:0.6em;
+        color:#000;
+        font-size:2em;
+        }
+.tablesort h2
+        {
+        font-weight:lighter;
+        font-family:verdana,arial,sans-serif;
+        text-align:center;
+        margin-top:1em;
+        color:#333;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        font-size:1.2em;
+        }
+.tablesort h2 span
+        {
+        font-variant:small-caps;
+        text-transform:none;
+        }
+.tablesort
+        {
+        /* width: auto; */
+        padding: 0;
+        margin: 0 auto;
+        border-left: 1px solid #DDDDDD;
+        border-collapse:collapse;
+        }
+
+.cs1
+        {
+        width:30em;
+        }
+.cs2
+        {
+        width:20em;
+        }
+.cs1 td,
+.cs2 td,
+#scientificNotation
+        {
+        text-align:right;
+        }
+.tablesort caption
+        {
+        padding: 0 0 5px 0;
+        margin:0 auto;
+        width:auto;
+        font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        text-align: right;
+        }
+.tablesort th
+        {
+        font: bold 10px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #717171;
+        border-right: 1px solid #DDDDDD;
+        border-bottom: 1px solid #DDDDDD;
+        border-top: 1px solid #DDDDDD;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: left;
+        /* padding: 8px 12px 4px 12px; */
+		padding: 2px 4px 2px 14px; 
+        background: #E4E4E4 url(../img/bg_header.jpg) no-repeat;
+        vertical-align:middle;
+        }
+		
+.tablesort td.total
+        {
+        border-top: 0;
+        border-left: 0;
+        border-right: 1px solid #DDDDDD;
+        background: none;
+        text-align:right;
+        font-weight:bold;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        }
+		
+.tablesort th.sortable,
+.tablesort th.sortable-text,
+.tablesort th.sortable-date,
+.tablesort th.sortable-keep,
+.tablesort th.sortable-date-dmy,
+.tablesort th.sortable-numeric,
+.tablesort th.sortable-currency,
+.tablesort th.sortable-sortByTwelveHourTimestamp,
+.tablesort th.sortable-sortIPAddress,
+.tablesort th.sortable-sortEnglishLonghandDateFormat,
+.tablesort th.sortable-sortScientificNotation,
+.tablesort th.sortable-sortImage,
+.tablesort th.sortable-sortFileSize,
+.tablesort th.sortable-sortAlphaNumeric,
+.tablesort th.sortable-sortEnglishDateTime
+        {
+        cursor:pointer;
+        background: #E4E4E4 url(../img/bg_header_sortable.jpg) no-repeat;
+        /* padding: 6px 12px 6px 12px; */
+		
+        padding: 2px 4px 2px 14px; 
+        }
+		
+.tablesort th.forwardSort
+        {
+        background:#E4E4E4 url(../img/bg_header_down.jpg) no-repeat 0 0;
+        }
+.tablesort th.reverseSort
+        {
+        background:#E4E4E4 url(../img/bg_header_up.jpg) no-repeat 0 0;
+        }
+.tablesort thead th.forwardSort a,
+.tablesort thead th.reverseSort a   {
+        color:#666666;
+        text-decoration:none;
+}
+
+/* --------------------------------------------------------------- */
+/* These styles should be added when very long tables are expected */
+/* --------------------------------------------------------------- */
+/**/
+.tablesort th.sort-active  {
+        background:#E4E4E4 url(../img/bg_header_sorting.jpg) no-repeat 0 0;
+        /*cursor:wait;*/
+    }
+.tablesort th.sort-active a {
+        color:#666666 !important;
+        /*cursor:wait;*/
+    }
+/* --------------------------------------------------------------- */
+
+.tablesort th a
+        {
+        text-decoration:none;
+        color: #666666;
+        background:transparent;
+        }
+.tablesort td a
+        {
+        text-decoration:none;
+        color:#666666;
+        background:transparent;
+        }
+.tablesort td img
+        {
+        margin:0 auto;
+        border:0px solid #ddd;
+        }
+.tablesort td a:hover
+        {
+        color:#999999;
+		/* tiramos porque gerava sublinha nas imagens dos links e fazia que a td mudasse */
+		/* de tamanho quando o cursor estava am cima do link - by Clv/Aless 05/01/2012   */
+        /* border-bottom:1px dotted #888888; */
+        background:transparent;
+        }
+.tablesort td
+        {
+        font: normal 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        border-right: 1px solid #DDDDDD;
+        border-bottom: 1px solid #DDDDDD;
+        /* padding: 6px 12px 6px 12px; */
+        padding: 2px 3px 2px 3px;
+        color: #444444;
+		vertical-align:top;
+        }
+.tablesort td.lft
+        {
+        text-align:left;
+        }
+.tablesort tr.alt
+        {
+        background: #F5FAFA;
+        color: #797268;
+        }
+
+/* Poor old Internet Explorer 6 has a bug that means we can't use background images for the table rows
+   as it trys to download the image each and every time that it is used (which means a 1000 row table
+   will produce 1000 http requests for the image in question) */
+.tablesort tr[class="alt"] td
+        {
+        background: #F5FAFA url(../img/td_alt.jpg) no-repeat;
+        }
+.tablesort td[class~="alt"]
+        {
+        background: #edf3f3 url(../img/col_alt.jpg) no-repeat !important;
+        }
+/* Poor old Internet Explorer won't see the next two rules either as it doesn't get :first-child */
+.tablesort tbody tr.alt td:first-child
+        {
+        /*background: #F5FAFA url(../img/bullet2.gif) no-repeat;*/
+        font-weight:bold;
+        }
+.tablesort tbody tr td:first-child
+        {
+        /*background: #fff url(../img/bullet1.gif) no-repeat;*/
+        font-weight:bold;
+        }
+/* Image free rules for Internet Explorer < 7 */
+* html .tablesort tr.alt td
+        {
+        background-color:#F5FAFA;
+        }
+* html .tablesort tr td.alt,
+* html .tablesort tr.alt td.alt
+        {
+        background-color:#edf3f3;
+        }

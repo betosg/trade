@@ -1,0 +1,4 @@
+a:5:{s:11:"filestring1";s:35:"Это строка с индексом 'filestring1'";s:11:"filestring2";s:49:"Это строка с
+             индексом 'filestring2'";s:11:"filestring3";s:79:"Это строка с индексом
+                 <b>'filestring3'</b>
+                 ";s:11:"filestring4";s:35:"Это строка с индексом 'filestring4'";s:4:"docs";s:12:"Документация";}

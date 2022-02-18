@@ -1,0 +1,8 @@
+>filestring1   'Это строка с индексом \'filestring1\''
+>filestring2   'Это строка с
+             индексом \'filestring2\''
+>filestring3   'Это строка с индексом
+                 <b>\'filestring3\'</b>
+                 '
+>filestring4   'Это строка с индексом \'filestring4\''
+>docs 'Документация'
