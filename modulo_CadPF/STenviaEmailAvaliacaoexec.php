@@ -26,10 +26,9 @@ $strMsgEmail = getVarEntidade($objConn, "msg_email_conselho");
 $strEMAIL = getVarEntidade($objConn, "email_conselho");
 $strCorpoEmail = str_replace("[cod_candidato]",  $intCodDado, $strMsgEmail);
 
-echo($strDestino);
-echo($intCodDado);
-echo($strMsgEmail);
-echo();
+print($intCodDado);
+print($strMsgEmail);
+print($strCorpoEmail);
 die();
 
 
