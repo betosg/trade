@@ -26,7 +26,11 @@ $strMsgEmail = getVarEntidade($objConn, "msg_email_conselho");
 $strEMAIL = getVarEntidade($objConn, "email_conselho");
 $strCorpoEmail = str_replace("[cod_candidato]",  $intCodDado, $strMsgEmail);
 
-
+echo($strDestino);
+echo($intCodDado);
+echo($strMsgEmail);
+echo();
+die();
 
 
 ini_set("sendmail_from", CFG_EMAIL_SENDER);
