@@ -37,7 +37,7 @@ $strMsgEmail = str_replace("[cod_candidato]",  $intCodDado, $strMsgEmail);
 						<tr>
 							<td width="230">
 							  <form name="formemail" action="STenviaEmailAvaliacaoexec.php" method="post">
-							    <input type="hidden" id="var_chavereg"     name="var_chavereg"     value="<?php echo($intCofPF);?>" 		 />
+							    <input type="hidden" id="var_chavereg"     name="var_chavereg"     value="<?php echo($intCodDado);?>" 		 />
 								<input type="hidden" id="var_destino"     name="var_destino"     value="<?php echo($strDestino);?>" 		 />
 								<table border="0" cellpadding="0" cellspacing="0" width="365">								
 									<tr><td style="padding-left:10px;" colspan="2"></td></tr>
