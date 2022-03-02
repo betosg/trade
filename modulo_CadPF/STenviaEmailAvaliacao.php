@@ -23,12 +23,7 @@ $strMsgEmail = str_replace("[cod_candidato]",  $intCodDado, $strMsgEmail);
 	  <link href="../_css/<?php echo(CFG_SYSTEM_NAME); ?>.css" rel="stylesheet" type="text/css">
 	  <script>
 		function submeterForm() {
-			document.formemail.var_chavereg.value = <?php echo($intCofPF);?>;
-			if(document.formemail.var_chavereg.value != "") {				
-				document.formemail.submit();
-			} else {
-				alert("Preencha a caixa de texto com os caracteres da imagem.");
-			}
+				document.formemail.submit();			
 		}
 	  </script>
 	</head>
