@@ -57,11 +57,11 @@ $strNaoEncontrado = "";
 						<tr><td colspan="2" height="15"></td></tr>
 						<tr>
 							<td width="230">
-								<?php if($strEmailsEnviados != "") { ?>
+								<?php if($strNaoEncontrado  == "") { ?>
 									<table>										
 										<tr><td><div class="destaque_med" style="padding-left:25px;">E-mail enviado com sucesso!</div></td></tr>										
 									</table>
-									<?php }  elseif($strNaoEncontrado != "") { ?>
+									<?php }  else { ?>
 									<table>										
 										<tr><td> <div class="destaque_med_red" style="padding-left:10px;"><?php echo($strNaoEncontrado); ?></div></td></tr>										
 									</table>							
