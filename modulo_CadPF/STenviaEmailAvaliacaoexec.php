@@ -58,14 +58,24 @@ $strNaoEncontrado = "";
 						<tr>
 							<td width="230">
 								<?php if($strEmailsEnviados != "") { ?>
-									<table>								
-										<tr><td> <div class="destaque_med_red" style="padding-left:10px;">E-mail enviado com sucesso!</div></td></tr>								
-									</table>		
+									<table>
+										<tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_ini",C_NONE)); ?></div></td></tr>
+										<tr><td><div class="destaque_med" style="padding-left:25px;"><?php echo($strEmailsEnviados); ?></div></td></tr>
+										<tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_fim",C_NONE)); ?></div></td></tr>
+									</table>
 									<?php }  elseif($strNaoEncontrado != "") { ?>
-									<table>								
-										<tr><td> <div class="destaque_med_red" style="padding-left:10px;"><?php echo($strNaoEncontrado); ?></div></td></tr>								
+									<table>
+										<!--tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_ini",C_NONE)); ?></div></td></tr-->
+										<tr><td <div class="destaque_med_red" style="padding-left:10px;"><?php echo($strNaoEncontrado); ?></div></td></tr>
+										<!--tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_ini",C_NONE)); ?></div></td></tr-->
+										<!--tr><td><div class="destaque_med_red" style="padding-left:25px;"><?php echo($strNaoEncontrado); ?></div></td></tr-->
 									</table>							
-								
+									<?php } //elseif($strEmailsNAOEnviados != "") { ?>
+									<!--table>
+										<tr><td><div style="padding-left:10px;">O(s) email(s) do(s) usu&aacute;rio(s) abaixo n&atilde;o n&atilde;o est&atilde;o cadastrados:</div></td></tr>
+										<tr><td><div class="destaque_med_red" style="padding-left:25px;"><?php echo($strEmailsNAOEnviados); ?></div></td></tr>
+									</table-->
+									<?php //} ?>
 							</td>
 							<td align="right" width="210" ><img src="../img/LogoMarca_ABFM.gif" border="0">&nbsp;&nbsp;</td>
 						</tr>
