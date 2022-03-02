@@ -58,17 +58,12 @@ $strNaoEncontrado = "";
 						<tr>
 							<td width="230">
 								<?php if($strEmailsEnviados != "") { ?>
-									<table>
-										<tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_ini",C_NONE)); ?></div></td></tr>
-										<tr><td><div class="destaque_med" style="padding-left:25px;"><?php echo($strEmailsEnviados); ?></div></td></tr>
-										<tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_fim",C_NONE)); ?></div></td></tr>
+									<table>										
+										<tr><td><div class="destaque_med" style="padding-left:25px;">E-mail enviado com sucesso!</div></td></tr>										
 									</table>
 									<?php }  elseif($strNaoEncontrado != "") { ?>
-									<table>
-										<!--tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_ini",C_NONE)); ?></div></td></tr-->
-										<tr><td <div class="destaque_med_red" style="padding-left:10px;"><?php echo($strNaoEncontrado); ?></div></td></tr>
-										<!--tr><td><div style="padding-left:10px;"><?php echo(getTText("esqueceu_senha_conteudo_ini",C_NONE)); ?></div></td></tr-->
-										<!--tr><td><div class="destaque_med_red" style="padding-left:25px;"><?php echo($strNaoEncontrado); ?></div></td></tr-->
+									<table>										
+										<tr><td> <div class="destaque_med_red" style="padding-left:10px;"><?php echo($strNaoEncontrado); ?></div></td></tr>										
 									</table>							
 									<?php } //elseif($strEmailsNAOEnviados != "") { ?>
 									<!--table>
