@@ -111,7 +111,7 @@ function emailNotify($prBody, $prSubject, $prEmails, $prFrom, $prDebug="", $prRe
 	</html>";
 
 	if($prDebug != true) {  
-		sendEmail($prFrom, $prEmails, ""   , ""    , strtoupper(getsession(CFG_SYSTEM_NAME . "_dir_cliente") . ": " . $prSubject), $strBody, true, $prReply, $prReplyName);
+		sendEmail($prFrom, $prEmails, ""   , ""    , strtoupper(getsession(CFG_SYSTEM_NAME . "_dir_cliente") . " " . $prSubject), $strBody, true, $prReply, $prReplyName);
 	  //sendEmail($prFrom, $prTo    , $prCc, $prBcc, $prSubject                                                      , $prMsg  , $prHtmlFlag)
 	} else {
 		echo("<script type=\"text/javascript\" language=\"javascript\">
