@@ -27,7 +27,7 @@ try {
 	$mail->SMTP_PORT = 587;
 	
 	$mail->Username = 'tradeunion@proevento.com.br';
-	$mail->Password = 'am>2=U4e';
+	$mail->Password = 'am>2=U4e!';
 	//$mail->SMTPDebug  = 1;  
 	//Estamos sem autenticar porque o envio é mais rápido
 	// by Clv/Aless/Luciano 14/09/2009
