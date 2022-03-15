@@ -1,18 +1,12 @@
 <?php
 header("Content-Type:text/html; charset=iso-8859-1");
-header("Cache-Control:no-cache, must-revalidate");
-header("Pragma:no-cache");
-
-ini_set("error_reporting","E_ERROR & ~E_WARNING & ~E_NOTICE");
-
 include_once("../_database/athdbconn.php");
 
-$strCPF        = request("cpf");
+$intCPF = request("cpf");
 
 $objConn = abreDBConn("tradeunion_abfm");
 
-
-
+try {
 	$strSQL = " SELECT
 				  
 				 cad_pf.cod_pf
@@ -64,15 +58,15 @@ $objConn = abreDBConn("tradeunion_abfm");
 			 LEFT JOIN cad_pf_curriculo on cad_pf_curriculo.cod_pf = cad_pf.cod_pf
 			 
 				
-			WHERE cad_pf.cpf like '".$strCPF."'";
-			  
-$objResult = $objConn->query($strSQL);
-
-$strRetorno = "";
-
-foreach($objResult as $objRS){
-echo(getValue($objRS,'cod_pf')."|".getValue($objRS,'old_entidade')."|".getValue($objRS,'nome')."|".getValue($objRS,'email')."|".getValue($objRS,'endprin_cep')."|".getValue($objRS,'endprin_logradouro')."|".getValue($objRS,'endprin_numero')."|".getValue($objRS,'endprin_complemento')."|".getValue($objRS,'endprin_bairro')."|".getValue($objRS,'endprin_cidade')."|".getValue($objRS,'endprin_estado')."|".getValue($objRS,'graducao_curso')."|".getValue($objRS,'graducao_ano_conclusao')."|".getValue($objRS,'graducao_faculdade')."|".getValue($objRS,'graducao_arquivo')."|".getValue($objRS,'experiencia_profissional')."|".getValue($objRS,'experiencia_profissional_arquivo')."|".getValue($objRS,'curriculo_arquivo')."|".getValue($objRS,'posgraducao_area')."|".getValue($objRS,'posgraducao_ano')."|".getValue($objRS,'posgraducao_instituicao')."|".getValue($objRS,'posgraducao_arquivo')."|".getValue($objRS,'norte')."|".getValue($objRS,'sul')."|".getValue($objRS,'nordeste')."|".getValue($objRS,'sudeste')."|".getValue($objRS,'centro_oeste	')."|".getValue($objRS,'aoutro')."|".getValue($objRS,'exterior	')."|".getValue($objRS,'radioterapia')."|".getValue($objRS,'radiodiagnostico')."|".getValue($objRS,'medicina_nuclear')."|".getValue($objRS,'protecao')."|".getValue($objRS,'ens_superior')."|".getValue($objRS,'manut_com_rep')."|".getValue($objRS,'ens_medio')."|".getValue($objRS,'orgao')."|".getValue($objRS,'industria')."|".getValue($objRS,'pesquisa')."|".getValue($objRS,'routro'));
+			WHERE cad_pf.cpf like '".$intCPF."'";
+	$objResult = $objConn->query($strSQL);
+	$objRS = $objResult->fetch();
+}catch(PDOException $e){ 	
+	mensagem("err_sql_titulo","err_sql_desc",$e->getMessage(),"","erro",1);
+	die();
 }
 
+echo(getValue($objRS,'cod_pf')."|".getValue($objRS,'old_entidade')."|".getValue($objRS,'nome')."|".getValue($objRS,'email')."|".getValue($objRS,'endprin_cep')."|".getValue($objRS,'endprin_logradouro')."|".getValue($objRS,'endprin_numero')."|".getValue($objRS,'endprin_complemento')."|".getValue($objRS,'endprin_bairro')."|".getValue($objRS,'endprin_cidade')."|".getValue($objRS,'endprin_estado')."|".getValue($objRS,'graducao_curso')."|".getValue($objRS,'graducao_ano_conclusao')."|".getValue($objRS,'graducao_faculdade')."|".getValue($objRS,'graducao_arquivo')."|".getValue($objRS,'experiencia_profissional')."|".getValue($objRS,'experiencia_profissional_arquivo')."|".getValue($objRS,'curriculo_arquivo')."|".getValue($objRS,'posgraducao_area')."|".getValue($objRS,'posgraducao_ano')."|".getValue($objRS,'posgraducao_instituicao')."|".getValue($objRS,'posgraducao_arquivo')."|".getValue($objRS,'norte')."|".getValue($objRS,'sul')."|".getValue($objRS,'nordeste')."|".getValue($objRS,'sudeste')."|".getValue($objRS,'centro_oeste	')."|".getValue($objRS,'aoutro')."|".getValue($objRS,'exterior	')."|".getValue($objRS,'radioterapia')."|".getValue($objRS,'radiodiagnostico')."|".getValue($objRS,'medicina_nuclear')."|".getValue($objRS,'protecao')."|".getValue($objRS,'ens_superior')."|".getValue($objRS,'manut_com_rep')."|".getValue($objRS,'ens_medio')."|".getValue($objRS,'orgao')."|".getValue($objRS,'industria')."|".getValue($objRS,'pesquisa')."|".getValue($objRS,'routro'));
 $objResult->closeCursor();
+
 ?>
