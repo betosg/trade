@@ -114,6 +114,6 @@ $strRetorno = $strRetorno . getValue($objRS,"pesquisa") . "|";
 $strRetorno = $strRetorno . getValue($objRS,"routro"));
 	
 }
-print_r($strRetorno);
+print($strRetorno);
 $objResult->closeCursor();
 ?>
