@@ -71,48 +71,7 @@ $objResult = $objConn->query($strSQL);
 $strRetorno = "";
 
 foreach($objResult as $objRS){
-
-echo(getValue($objRS,"cod_pf") . "|");
-echo(getValue($objRS,"old_entidade") . "|");
-echo(getValue($objRS,"nome") . "|");
-echo(getValue($objRS,"email") . "|");
-echo(getValue($objRS,"endprin_cep") . "|");
-echo(getValue($objRS,"endprin_logradouro") . "|");
-echo(getValue($objRS,"endprin_numero") . "|");
-echo(getValue($objRS,"endprin_complemento") . "|");
-echo(getValue($objRS,"endprin_bairro") . "|");
-echo(getValue($objRS,"endprin_cidade") . "|");
-echo(getValue($objRS,"endprin_estado") . "|");
-echo(getValue($objRS,"graducao_curso") . "|");
-echo(getValue($objRS,"graducao_ano_conclusao") . "|");
-echo(getValue($objRS,"graducao_faculdade") . "|");
-echo(getValue($objRS,"graducao_arquivo") . "|");
-echo(getValue($objRS,"experiencia_profissional") . "|");
-echo(getValue($objRS,"experiencia_profissional_arquivo") . "|");
-echo(getValue($objRS,"curriculo_arquivo") . "|");
-echo(getValue($objRS,"posgraducao_area") . "|");
-echo(getValue($objRS,"posgraducao_ano") . "|");
-echo(getValue($objRS,"posgraducao_instituicao") . "|");
-echo(getValue($objRS,"posgraducao_arquivo") . "|");
-echo(getValue($objRS,"norte") . "|");
-echo(getValue($objRS,"sul") . "|");
-echo(getValue($objRS,"nordeste") . "|");
-echo(getValue($objRS,"sudeste") . "|");
-echo(getValue($objRS,"centro_oeste	") . "|");
-echo(getValue($objRS,"aoutro") . "|");
-echo(getValue($objRS,"exterior	") . "|");
-echo(getValue($objRS,"radioterapia") . "|");
-echo(getValue($objRS,"radiodiagnostico") . "|");
-echo(getValue($objRS,"medicina_nuclear") . "|");
-echo(getValue($objRS,"protecao") . "|");
-echo(getValue($objRS,"ens_superior") . "|");
-echo(getValue($objRS,"manut_com_rep") . "|");
-echo(getValue($objRS,"ens_medio") . "|");
-echo(getValue($objRS,"orgao") . "|");
-echo(getValue($objRS,"industria") . "|");
-echo(getValue($objRS,"pesquisa") . "|");
-echo(getValue($objRS,"routro"));
-	
+echo(getValue($objRS,'cod_pf')."|".getValue($objRS,'old_entidade')."|".getValue($objRS,'nome')."|".getValue($objRS,'email')."|".getValue($objRS,'endprin_cep')."|".getValue($objRS,'endprin_logradouro')."|".getValue($objRS,'endprin_numero')."|".getValue($objRS,'endprin_complemento')."|".getValue($objRS,'endprin_bairro')."|".getValue($objRS,'endprin_cidade')."|".getValue($objRS,'endprin_estado')."|".getValue($objRS,'graducao_curso')."|".getValue($objRS,'graducao_ano_conclusao')."|".getValue($objRS,'graducao_faculdade')."|".getValue($objRS,'graducao_arquivo')."|".getValue($objRS,'experiencia_profissional')."|".getValue($objRS,'experiencia_profissional_arquivo')."|".getValue($objRS,'curriculo_arquivo')."|".getValue($objRS,'posgraducao_area')."|".getValue($objRS,'posgraducao_ano')."|".getValue($objRS,'posgraducao_instituicao')."|".getValue($objRS,'posgraducao_arquivo')."|".getValue($objRS,'norte')."|".getValue($objRS,'sul')."|".getValue($objRS,'nordeste')."|".getValue($objRS,'sudeste')."|".getValue($objRS,'centro_oeste	')."|".getValue($objRS,'aoutro')."|".getValue($objRS,'exterior	')."|".getValue($objRS,'radioterapia')."|".getValue($objRS,'radiodiagnostico')."|".getValue($objRS,'medicina_nuclear')."|".getValue($objRS,'protecao')."|".getValue($objRS,'ens_superior')."|".getValue($objRS,'manut_com_rep')."|".getValue($objRS,'ens_medio')."|".getValue($objRS,'orgao')."|".getValue($objRS,'industria')."|".getValue($objRS,'pesquisa')."|".getValue($objRS,'routro'));
 }
 
 $objResult->closeCursor();
