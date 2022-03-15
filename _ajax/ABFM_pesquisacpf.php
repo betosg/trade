@@ -65,7 +65,8 @@ $objConn = abreDBConn("tradeunion_abfm");
 			 
 				
 			WHERE cad_pf.cpf like '".$strCPF."'";
-			  
+			  echo($strSQL);
+			  die();
 $objResult = $objConn->query($strSQL);
 
 $strRetorno = "";
@@ -114,6 +115,6 @@ $strRetorno = $strRetorno . getValue($objRS,"pesquisa") . "|";
 $strRetorno = $strRetorno . getValue($objRS,"routro"));
 	
 }
-print($strRetorno);
+echo($strRetorno);
 $objResult->closeCursor();
 ?>
