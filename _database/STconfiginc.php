@@ -53,7 +53,7 @@
 // Constantes de e-mail
 @define("CFG_SMTP_SERVER","smtp.gmail.com");
 @define("CFG_SMTP_PORT",587); 
-@define("CFG_EMAIL_AUDITORIA","auditormaster@gmail.com");
+@define("CFG_EMAIL_AUDITORIA","auditormaster2021@gmail.com");
 @define("CFG_EMAIL_SENDER","tradeunion@proevento.com.br");
 @define("CFG_EMAIL_MASK","");
 @define("CFG_EMAIL_PASS","ath503bbsi319");
