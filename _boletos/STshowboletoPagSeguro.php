@@ -318,7 +318,7 @@ if ($err) {
 //  echo "cURL Error #:" . $err;
 } else {
 	if($strUserLogado == "95065750025"){
-		$urlBoleto = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=".$strAuth;
+		$urlBoleto = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/?code=".$strAuth;
 	} else {
         $urlBoleto = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=".$strAuth;
 	}
