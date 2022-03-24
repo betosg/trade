@@ -244,6 +244,13 @@ $SellerAccountId   = "tesouraria@abfm.org.br";
 $url			   = "https://ws.pagseguro.uol.com.br/v2/checkout/";
 /*fim dados oficiais*/
 
+if($intCodDado == "5677"){
+	$ApiAccessKey      = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout";
+$SellerAccountId   = "tesouraria@abfm.org.br";
+$url			   = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout";
+}
+
+
 
 
 $strPARAM =  "email=".$SellerAccountId;
