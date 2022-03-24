@@ -317,7 +317,7 @@ foreach($xml as $key => $value) {
 if ($err) {
 //  echo "cURL Error #:" . $err;
 } else {
-  $urlBoleto = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=".$strAuth;
+  $urlBoleto = $url."/payment.html?code=".$strAuth;
 }
 
 
