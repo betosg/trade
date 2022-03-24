@@ -244,10 +244,10 @@ $SellerAccountId   = "tesouraria@abfm.org.br";
 $url			   = "https://ws.pagseguro.uol.com.br/v2/checkout/";
 /*fim dados oficiais*/
 
-if($intCodDado == 5677){	
-	$ApiAccessKey      = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/";
+if($intCodDado == 5677){
+	$ApiAccessKey      = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout";
 $SellerAccountId   = "tesouraria@abfm.org.br";
-$url			   = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/".$intCodDado;
+$url			   = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout";
 }
 
 
@@ -317,7 +317,9 @@ foreach($xml as $key => $value) {
 if ($err) {
 //  echo "cURL Error #:" . $err;
 } else {
-  $urlBoleto = $url."payment.html?code=".$strAuth;
+  //$urlBoleto = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=".$strAuth;
+  
+  $urlBoleto = $url;
 }
 
 
