@@ -245,9 +245,10 @@ $url			   = "https://ws.pagseguro.uol.com.br/v2/checkout/";
 /*fim dados oficiais*/
 
 if($strUserLogado == "95065750025"){
-	$ApiAccessKey      = "82A1D756E0EE418B8596A485798DF234";
-$SellerAccountId   = "tesouraria@abfm.org.br";
-$url			   = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/";
+	//$ApiAccessKey      = "82A1D756E0EE418B8596A485798DF234";
+	$ApiAccessKey      = "080d5f3f-9d29-43cf-92df-45997a047ecc53088ea14094b6999a203660a07245390c53-cdb4-4c83-8ea5-7605985fa87d";
+	$SellerAccountId   = "tesouraria@abfm.org.br";
+	$url			   = "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout/";
 }
 
 
