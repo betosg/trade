@@ -11,10 +11,10 @@ function phoneValidate($phone){
 	$regex = '/^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/';
 
 	if (preg_match($regex, $phone) == false) {
-		//echo("O número não foi validado.");
+		//echo("O nï¿½mero nï¿½o foi validado.");
 		return false;
 	} else {
-		//echo("Telefone válido.");
+		//echo("Telefone vï¿½lido.");
 		return true;
 	}        
 }
@@ -160,7 +160,7 @@ try{
 				
 		$objResult = $objConn->query($strSQL);
 		if($objResult->rowCount() <= 0) {
-			mensagem("Transação Efetivada","Sua transação foi feita, e está em processamento.","","","erro",1);
+			mensagem("Transaï¿½ï¿½o Efetivada","Sua transaï¿½ï¿½o foi feita, e estï¿½ em processamento.","","","erro",1);
 			die();
 		}
 		$objRS = $objResult->fetch();
@@ -225,10 +225,10 @@ $strPARAM = "";
 if ($strMsg !=""){ ?>
 	<script language="javascript">
 		<?php if (!isset($_GET["var_basename"])){?>
-			alert('<?php echo("Atualize seus dados pessoais, e verifique os campos abaixo para emissão da cobrança.\\r\\n".$strMsg);?>');		
+			alert('<?php echo("Atualize seus dados pessoais, e verifique os campos abaixo para emissï¿½o da cobranï¿½a.\\r\\n".$strMsg);?>');		
 			window.parent.document.location.href = "../modulo_PainelPF/STCadPFOpen.php"
 		<?php } else {?>
-			alert('<?php echo("Atualize seus dados pessoais, e verifique os campos abaixo para emissão da cobrança.\\r\\n".$strMsg);?>');		
+			alert('<?php echo("Atualize seus dados pessoais, e verifique os campos abaixo para emissï¿½o da cobranï¿½a.\\r\\n".$strMsg);?>');		
 			history.go(-1);	 
 	    <?php } ?>
 		//
@@ -280,7 +280,7 @@ $strPARAM = $strPARAM . "&shippingAddressCity=";
 $strPARAM = $strPARAM . "&shippingAddressState=";
 $strPARAM = $strPARAM . "&shippingAddressCountry=BRA";
 
-//$strPARAM = "email=rodrigo@proevento.com.br&token=08418ff7-08ca-4576-8b73-9f0c4fc6714a12381bd04ee4a190c09f7a5fe5282588d853-7384-41e1-974d-bdfbf01b9dc1&currency=BRL&itemId1=100099&itemDescription1=12º Seminário UNIDAS - 05 e 06/agosto 21 - Inscricao 100099 Grupo: 100099&itemAmount1=1250.75&itemQuantity1=1&itemWeight1=0&reference=100099&senderName=TESTE TESTE&senderCPF=93046900058&senderAreaCode=&senderPhone=&senderEmail=testeww@hotmail.com&shippingType=3&shippingAddressStreet=&shippingAddressNumber=&shippingAddressComplement=&shippingAddressDistrict=&shippingAddressPostalCode=&shippingAddressCity=&shippingAddressState=&shippingAddressCountry=BRA";
+//$strPARAM = "email=rodrigo@proevento.com.br&token=08418ff7-08ca-4576-8b73-9f0c4fc6714a12381bd04ee4a190c09f7a5fe5282588d853-7384-41e1-974d-bdfbf01b9dc1&currency=BRL&itemId1=100099&itemDescription1=12ï¿½ Seminï¿½rio UNIDAS - 05 e 06/agosto 21 - Inscricao 100099 Grupo: 100099&itemAmount1=1250.75&itemQuantity1=1&itemWeight1=0&reference=100099&senderName=TESTE TESTE&senderCPF=93046900058&senderAreaCode=&senderPhone=&senderEmail=testeww@hotmail.com&shippingType=3&shippingAddressStreet=&shippingAddressNumber=&shippingAddressComplement=&shippingAddressDistrict=&shippingAddressPostalCode=&shippingAddressCity=&shippingAddressState=&shippingAddressCountry=BRA";
 
 $headers = array("Content-Type: application/x-www-form-urlencoded");
 
@@ -312,7 +312,7 @@ foreach($xml as $key => $value) {
 		$strAuth = $value;
 	}    
 }
-
+var_dump($xml);
 
 if ($err) {
 //  echo "cURL Error #:" . $err;
