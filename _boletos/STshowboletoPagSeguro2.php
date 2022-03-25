@@ -301,7 +301,7 @@ $err = curl_error($curl);
 curl_close($curl);
 
 $xml = new SimpleXMLElement($response);
-
+var_dump($xml);
 foreach($xml as $key => $value) {
 	if($key == "code"){
 		$strAuth = $value;
