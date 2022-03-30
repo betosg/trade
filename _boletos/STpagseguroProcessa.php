@@ -57,14 +57,5 @@ ORDER BY t1.dt_vcto limit 10";
             print_r($array);
             print_r("</pre>");
             }
-//foreach($xml as $key => $value) {
-//	//if($key == "code"){
-//	//	$strAuth = $value;
-//    print($key ." : ".$value ."<br>");
-//	//}    
-//}
-//print_r("<pre>");
-//var_dump($xml);
-//print_r("</pre>");
 
 ?>
